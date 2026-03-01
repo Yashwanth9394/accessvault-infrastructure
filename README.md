@@ -1,14 +1,50 @@
-# Welcome to your CDK TypeScript project
+# AccessVault Infrastructure
 
-This is a blank project for CDK development with TypeScript.
+AWS CDK infrastructure for AccessVault - a secure access management system. Provisions authentication, authorization, and data storage resources on AWS.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Features
 
-## Useful commands
+- AWS Cognito user pools for authentication
+- DynamoDB tables for data storage
+- IAM roles and policies for fine-grained access control
+- Modular CDK construct design
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+## Tech Stack
+
+- **IaC:** AWS CDK (TypeScript)
+- **Auth:** Amazon Cognito
+- **Database:** Amazon DynamoDB
+- **Security:** AWS IAM
+
+## Architecture
+
+```
+AWS CDK Stack
+├── Cognito Construct   # User pools, identity pools
+├── DynamoDB Construct   # Tables, indexes, capacity
+└── IAM Construct        # Roles, policies, permissions
+```
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- AWS CLI configured
+- AWS CDK CLI (`npm install -g aws-cdk`)
+
+### Installation
+```bash
+npm install
+```
+
+### Deploy
+```bash
+npx cdk synth    # Synthesize CloudFormation template
+npx cdk deploy   # Deploy to AWS
+```
+
+### Useful Commands
+```bash
+npx cdk diff     # Compare deployed stack with current state
+npx cdk destroy  # Remove all resources
+```
